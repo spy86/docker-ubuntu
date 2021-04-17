@@ -1,12 +1,12 @@
 FROM ubuntu
 
 LABEL version="1.0" maintainer="Maciej Michalski <maciej.michalsk@gmail.com>"
-RUN DEBIAN_FRONTEND="noninteractive" apt-get -y install tzdata
+RUN DEBIAN_FRONTEND="noninteractive"
 RUN \
   sed -i 's/# \(.*multiverse$\)/\1/g' /etc/apt/sources.list && \
   apt-get update && \
   apt-get -y upgrade && \
-  apt-get install -y build-essential && \
+  apt-get install -y build-essential tzdata && \
   apt-get install -y software-properties-common && \
   add-apt-repository ppa:nginx/stable &&\
   apt-get install -y byobu curl git htop man unzip vim wget git nano && \
