@@ -1,7 +1,8 @@
 FROM ubuntu
 
 LABEL version="1.0" maintainer="Maciej Michalski <maciej.michalsk@gmail.com>"
-RUN DEBIAN_FRONTEND="noninteractive"
+ENV TZ=Europe/Berlin
+RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 RUN \
   sed -i 's/# \(.*multiverse$\)/\1/g' /etc/apt/sources.list && \
   apt-get update && \
