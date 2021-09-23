@@ -6,6 +6,7 @@ RUN \
   sed -i 's/# \(.*multiverse$\)/\1/g' /etc/apt/sources.list && \
   apt-get update && \
   apt-get -y upgrade && \
+  apt-get -y dist-upgrade  && \
   apt-get install -y build-essential tzdata && \
   apt-get install -y software-properties-common && \
   add-apt-repository ppa:nginx/stable &&\
