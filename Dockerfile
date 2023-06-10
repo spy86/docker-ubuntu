@@ -1,4 +1,4 @@
-FROM ubuntu:22.10
+FROM ubuntu:lunar
 
 ENV TZ=Europe/Berlin
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
